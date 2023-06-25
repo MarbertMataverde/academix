@@ -6,7 +6,7 @@ class MirageThemeColors {
   static const Color primaryColor = Color(0xFFFFCC66);
 
   // The background color for the scaffold (the main app screen) in the Mirage theme.
-  static const Color scaffoldBackgroundColor = Color(0xFF242936);
+  static const Color scaffoldBackgroundColor = Color(0xFF1F2430);
 
   // The foreground color used for body text in the Mirage theme.
   static const Color foregroundColor = Color(0xFFCCCAC2);
