@@ -6,7 +6,7 @@ class DarkThemeColors {
   static const Color primaryColor = Color(0xFFE6B450);
 
   // The background color for the scaffold (the main app screen) in the dark theme.
-  static const Color scaffoldBackgroundColor = Color(0xFF0D1017);
+  static const Color scaffoldBackgroundColor = Color(0xFF0B0E14);
 
   // The foreground color used for body text in the dark theme.
   static const Color foregroundColor = Color(0xFFBFBDB6);
