@@ -1,4 +1,4 @@
-import 'package:academix/configs/theme/colors/dark_theme_colors.dart';
+import 'package:academix/configs/themes/colors/dark_theme_colors.dart';
 import 'package:flutter/material.dart';
 
 // This is the definition of the dark theme data used in the application.

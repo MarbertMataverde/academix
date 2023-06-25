@@ -1,4 +1,4 @@
-import 'package:academix/configs/theme/colors/mirage_theme_colors.dart';
+import 'package:academix/configs/themes/colors/mirage_theme_colors.dart';
 import 'package:flutter/material.dart';
 
 // This is the definition of the Mirage theme data used in the application with Mirage colors.
