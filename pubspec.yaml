@@ -13,6 +13,8 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+  shared_preferences: ^2.1.2
+  flutter_riverpod: ^2.3.6
 
 dev_dependencies:
   flutter_test:
@@ -22,3 +24,35 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    # fonts
+    - assets/fonts/sacramento/
+    - assets/fonts/ysabeau_office/
+
+  fonts:
+    # Sacramento Font
+    - family: Sacramento
+      fonts:
+        - asset: assets/fonts/sacramento/Sacramento-Regular.ttf
+    # Ysabeau Office Font
+    - family: Ysabeau
+      fonts:
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-Black.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-BlackItalic.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-Bold.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-BoldItalic.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-ExtraBold.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-ExtraBoldItalic.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-ExtraLight.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-ExtraLightItalic.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-Italic.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-Light.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-LightItalic.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-Medium.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-MediumItalic.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-Regular.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-SemiBold.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-SemiBoldItalic.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-Thin.ttf
+        - asset: assets/fonts/ysabeau_office/YsabeauOffice-ThinItalic.ttf
