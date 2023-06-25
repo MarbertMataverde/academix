@@ -6,7 +6,7 @@ class LightThemeColors {
   static const Color primaryColor = Color(0xFFFFAA33);
 
   // The background color for the scaffold (the main app screen) in the light theme.
-  static const Color scaffoldBackgroundColor = Color(0xFFFCFCFC);
+  static const Color scaffoldBackgroundColor = Color(0xFFF8F9FA);
 
   // The foreground color used for body text in the light theme.
   static const Color foregroundColor = Color(0xFF5C6166);
