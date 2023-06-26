@@ -1,9 +1,9 @@
 import 'package:academix/configs/layout/responsive_layout.dart';
 import 'package:academix/configs/themes/provider/theme_data.dart';
 import 'package:academix/configs/themes/provider/theme_provider.dart';
-import 'package:academix/features/authentication/layout/desktop_layout.dart';
-import 'package:academix/features/authentication/layout/phone_layout.dart';
-import 'package:academix/features/authentication/layout/tablet_layout.dart';
+import 'package:academix/features/authentication/view/desktop_view.dart';
+import 'package:academix/features/authentication/view/phone_view.dart';
+import 'package:academix/features/authentication/view/tablet_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -28,9 +28,9 @@ class _AcademixState extends ConsumerState<Academix> {
       debugShowCheckedModeBanner: false,
       theme: themeData(ref),
       home: const ResponsiveLayout(
-        phone: PhoneLayout(),
-        tablet: TabletLayout(),
-        desktop: DesktopLayout(),
+        phone: PhoneView(),
+        tablet: TabletView(),
+        desktop: DesktopView(),
       ),
     );
   }
