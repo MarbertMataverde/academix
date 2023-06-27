@@ -43,5 +43,5 @@ final ThemeData lightThemeData = ThemeData(
   ),
 
   // Set the default font family for the theme.
-  fontFamily: 'Ysabeau',
+  fontFamily: 'Gilroy',
 );
