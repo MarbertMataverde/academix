@@ -1,9 +1,9 @@
 import 'package:academix/configs/layout/responsive_layout.dart';
 import 'package:academix/configs/themes/provider/theme_data.dart';
 import 'package:academix/configs/themes/provider/theme_provider.dart';
-import 'package:academix/features/authentication/view/desktop_view.dart';
-import 'package:academix/features/authentication/view/phone_view.dart';
-import 'package:academix/features/authentication/view/tablet_view.dart';
+import 'package:academix/features/authentication/sign_in/view/sign_in_desktop_view.dart';
+import 'package:academix/features/authentication/sign_in/view/sign_in_phone_view.dart';
+import 'package:academix/features/authentication/sign_in/view/sign_in_tablet_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
