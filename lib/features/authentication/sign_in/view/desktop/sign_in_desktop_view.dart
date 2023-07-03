@@ -3,10 +3,10 @@ import 'package:academix/configs/themes/provider/save_user_theme.dart';
 import 'package:academix/configs/themes/provider/theme_options.dart';
 import 'package:academix/configs/themes/provider/theme_provider.dart';
 import 'package:academix/configs/themes/styles/button_style.dart';
-import 'package:academix/features/authentication/sign_in/view/desktop/widgets/custom_textformfield.dart';
-import 'package:academix/features/authentication/sign_in/view/desktop/widgets/divider_widget.dart';
+import 'package:academix/components/custom_textformfield.dart';
+import 'package:academix/features/authentication/sign_in/widgets/divider_widget.dart';
 import 'package:academix/features/authentication/sign_in/view/desktop/widgets/logo_with_text_desktop_widget.dart';
-import 'package:academix/features/authentication/sign_in/view/desktop/widgets/sign_up_text_widget.dart';
+import 'package:academix/features/authentication/sign_in/widgets/sign_up_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
