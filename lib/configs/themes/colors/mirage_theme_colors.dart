@@ -19,4 +19,7 @@ class MirageThemeColors {
 
   // The shadow color used in the Mirage theme for visual depth.
   static const Color shadowColor = Color(0xFF161A22);
+
+  // Mirage button background color
+  static const Color buttonBackgroundColor = Color(0xFF171B24);
 }

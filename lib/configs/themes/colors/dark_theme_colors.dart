@@ -19,4 +19,7 @@ class DarkThemeColors {
 
   // The shadow color used in the dark theme for visual depth.
   static const Color shadowColor = Color(0xFF05070A);
+
+  // Dark button background color
+  static const Color buttonBackgroundColor = Color(0xFF0F131A);
 }
