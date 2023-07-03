@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // This is the definition of the Mirage theme data used in the application with Mirage colors.
 final ThemeData mirageThemeData = ThemeData(
   // Enable Material3 design.
-  useMaterial3: true,
+  // useMaterial3: true,
 
   // Set the primary color for the theme.
   primaryColor: MirageThemeColors.primaryColor,
@@ -13,7 +13,7 @@ final ThemeData mirageThemeData = ThemeData(
   scaffoldBackgroundColor: MirageThemeColors.scaffoldBackgroundColor,
 
   // Customize the color scheme for the theme.
-  colorScheme: const ColorScheme.light().copyWith(
+  colorScheme: const ColorScheme.dark().copyWith(
     // Set the error color.
     error: MirageThemeColors.errorColor,
 

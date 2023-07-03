@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // This is the definition of the light theme data used in the application.
 final ThemeData lightThemeData = ThemeData(
   // Enable Material3 design.
-  useMaterial3: true,
+  // useMaterial3: true,
 
   // Set the primary color for the theme.
   primaryColor: LightThemeColors.primaryColor,

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 // This is the definition of the dark theme data used in the application.
 final ThemeData darkThemeData = ThemeData(
   // Enable Material3 design.
-  useMaterial3: true,
+  // useMaterial3: true,
 
   // Set the primary color for the theme.
   primaryColor: DarkThemeColors.primaryColor,
@@ -13,7 +13,7 @@ final ThemeData darkThemeData = ThemeData(
   scaffoldBackgroundColor: DarkThemeColors.scaffoldBackgroundColor,
 
   // Customize the color scheme for the theme.
-  colorScheme: const ColorScheme.light().copyWith(
+  colorScheme: const ColorScheme.dark().copyWith(
     // Set the error color.
     error: DarkThemeColors.errorColor,
 
