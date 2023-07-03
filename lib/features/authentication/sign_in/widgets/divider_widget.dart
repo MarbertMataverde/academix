@@ -1,8 +1,10 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:flutter/material.dart';
+
 import 'package:academix/configs/themes/colors/dark_theme_colors.dart';
 import 'package:academix/configs/themes/colors/light_theme_colors.dart';
 import 'package:academix/configs/themes/colors/mirage_theme_colors.dart';
 import 'package:academix/configs/themes/provider/theme_options.dart';
-import 'package:flutter/material.dart';
 
 /// A widget that displays a divider with text in between based on the selected theme.
 class DividerWidget extends StatelessWidget {
@@ -44,7 +46,7 @@ class ExpandedDivider extends StatelessWidget {
   const ExpandedDivider({
     Key? key,
     required this.themeState,
-  });
+  }) : super(key: key);
 
   /// The current theme state.
   final String themeState;
