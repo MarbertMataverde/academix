@@ -11,14 +11,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// The desktop view of the sign-in screen.
-class DesktopView extends ConsumerStatefulWidget {
-  const DesktopView({Key? key}) : super(key: key);
+class DesktopSignInView extends ConsumerStatefulWidget {
+  const DesktopSignInView({Key? key}) : super(key: key);
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _DesktopViewState();
 }
 
-class _DesktopViewState extends ConsumerState<DesktopView> {
+class _DesktopViewState extends ConsumerState<DesktopSignInView> {
   @override
   Widget build(BuildContext context) {
     final themeState = ref.watch(themeStateProvider);

@@ -10,8 +10,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 /// A widget that represents the phone view of the sign-in screen.
-class PhoneView extends ConsumerWidget {
-  const PhoneView({super.key});
+class PhoneSignInView extends ConsumerWidget {
+  const PhoneSignInView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

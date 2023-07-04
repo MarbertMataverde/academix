@@ -10,8 +10,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 /// A widget that represents the tablet view of the sign-in screen.
-class TabletView extends ConsumerWidget {
-  const TabletView({super.key});
+class TabletSignInView extends ConsumerWidget {
+  const TabletSignInView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
