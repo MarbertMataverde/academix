@@ -95,7 +95,7 @@ class CustomTextFormField extends StatelessWidget {
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: themeState == ThemeOptions.lightTheme
-                ? BorderSide(
+                ? const BorderSide(
                     color: LightThemeColors.shadowColor,
                     width: 0.5,
                   )
