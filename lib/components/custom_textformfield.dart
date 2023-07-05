@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import 'package:academix/configs/themes/colors/dark_theme_colors.dart';
 import 'package:academix/configs/themes/colors/light_theme_colors.dart';
 import 'package:academix/configs/themes/colors/mirage_theme_colors.dart';
 import 'package:academix/configs/themes/provider/theme_options.dart';
-import 'package:flutter/services.dart';
 
-/// A customizable text input field that adapts its appearance based on the selected theme of the app. It allows users to enter text and provides visual feedback according to the theme.
-
+/// A customizable text input field that adapts its appearance based on the selected theme of the app.
 class CustomTextFormField extends StatelessWidget {
   /// The current theme of the app.
   final String themeState;
@@ -20,21 +20,24 @@ class CustomTextFormField extends StatelessWidget {
   /// The keyboard type to use for the text field.
   final TextInputType? keyboardType;
 
-  /// The custom text field width
+  /// The custom text field width.
   final double? width;
 
-  /// The custom text field height
+  /// The custom text field height.
   final double? height;
 
-  /// The input formater
+  /// The input formatter for text field.
   final List<TextInputFormatter>? inputFomater;
 
-  /// The custom character length for text field
+  /// The maximum character length for the text field.
   final int? maxLength;
+
+  /// The suffix icon widget to display at the end of the text field.
+  final Widget? suffixIcon;
 
   /// Creates a `CustomTextFormField`.
   ///
-  /// The `themeState` parameter represents the current theme of the app, which is a string.
+  /// The `themeState` parameter represents the current theme of the app as a string.
   /// The `obscureText` parameter determines whether the text field is used for entering a password. If `true`, the entered text will be obscured.
   /// The `hintText` parameter specifies the text to display as a hint in the text field.
   /// The `keyboardType` parameter determines the keyboard type to use for the text field.
@@ -48,6 +51,7 @@ class CustomTextFormField extends StatelessWidget {
     this.height,
     this.inputFomater,
     this.maxLength,
+    this.suffixIcon,
   }) : super(key: key);
 
   @override
@@ -91,12 +95,13 @@ class CustomTextFormField extends StatelessWidget {
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: themeState == ThemeOptions.lightTheme
-                ? const BorderSide(
+                ? BorderSide(
                     color: LightThemeColors.shadowColor,
                     width: 0.5,
                   )
                 : BorderSide.none,
           ),
+          suffixIcon: suffixIcon,
         ),
         style: TextStyle(
           color: themeState == ThemeOptions.darkTheme
