@@ -1,10 +1,10 @@
-### Welcome to the Wiser Repository!
+### Welcome to the Academix Repository!
 
 To get started with the project, please follow these instructions:
 
-1. Clone the Wiser repository to your local machine.
-2. Generate the `firebase_config.dart` file using the Firebase CLI.
-3. Create a new file named `firebase_config.dart` in the `lib/config` directory.
+1. Clone the academix repository to your local machine.
+2. Generate the `firebase_options.dart` file using the Firebase CLI.
+3. Create a new file named `firebase_config.dart` in the `lib/config/firebase` directory.
 4. Copy the code snippet provided below and paste it into the `firebase_config.dart` file:
 
 ```dart
