@@ -1,5 +1,5 @@
 import 'package:academix/configs/themes/styles/button_style.dart';
-import 'package:academix/constants/constant.dart';
+import 'package:academix/constants/agreement_message.dart';
 import 'package:academix/features/authentication/sign_up/widgets/custom_suffix_icon_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -218,7 +218,7 @@ class DesktopSignUpView extends ConsumerWidget {
                           height: 40,
                         ),
                         const Text(
-                          Constant.signUpAgreementMessage,
+                          AgreementMessage.signUpAgreementMessage,
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(
