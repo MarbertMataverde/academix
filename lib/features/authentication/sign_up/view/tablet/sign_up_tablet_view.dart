@@ -1,5 +1,6 @@
 import 'package:academix/configs/themes/styles/button_style.dart';
 import 'package:academix/constants/agreement_message.dart';
+import 'package:academix/features/authentication/sign_up/widgets/appbar_arrow_back_widget.dart';
 import 'package:academix/features/authentication/sign_up/widgets/custom_suffix_icon_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -33,13 +34,14 @@ class TabletSignUpView extends ConsumerWidget {
     final List<String> listOfColleges = [College.coa, College.cob, College.ccs];
 
     return Scaffold(
+      appBar: appBarArrowBackWidget(context, themeState),
       body: Center(
         child: SizedBox(
           width: mediaQuerySize.width * 0.95,
           height: mediaQuerySize.height,
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 50),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
