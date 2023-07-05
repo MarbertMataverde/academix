@@ -9,7 +9,7 @@ import 'package:academix/configs/themes/provider/theme_provider.dart';
 import 'package:academix/features/authentication/sign_up/provider/colleges.dart';
 import 'package:academix/features/authentication/sign_up/provider/genders.dart';
 import 'package:academix/features/authentication/sign_up/utils/number_formater.dart';
-import 'package:academix/features/authentication/sign_up/widgets/gender_selector_widget.dart';
+import 'package:academix/features/authentication/sign_up/widgets/custom_dropdownbutton_widget.dart';
 
 class DesktopSignUpView extends ConsumerWidget {
   // Selected gender state provider
