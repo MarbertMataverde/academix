@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "785229154229",
+    "project_id": "academix-c8a79",
+    "storage_bucket": "academix-c8a79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785229154229:android:d12328458f032961f13bfc",
+        "android_client_info": {
+          "package_name": "com.example.academix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785229154229-o2bvukc6sed4p5s67aaq2ffre8h432g5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNvU7h42kmCJlTtE-7EOkX_7mRfreGfEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785229154229-o2bvukc6sed4p5s67aaq2ffre8h432g5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785229154229:android:0d326732e8b26e6cf13bfc",
+        "android_client_info": {
+          "package_name": "edu.academix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785229154229-o2bvukc6sed4p5s67aaq2ffre8h432g5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNvU7h42kmCJlTtE-7EOkX_7mRfreGfEg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785229154229-o2bvukc6sed4p5s67aaq2ffre8h432g5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
