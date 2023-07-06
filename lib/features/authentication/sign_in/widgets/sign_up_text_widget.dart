@@ -1,9 +1,11 @@
+import 'package:academix/constants/routes_path.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SignUpTextWidget extends StatelessWidget {
   const SignUpTextWidget({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +19,7 @@ class SignUpTextWidget extends StatelessWidget {
           splashColor: Colors.transparent,
           splashFactory: NoSplash.splashFactory,
           hoverColor: Colors.transparent,
-          onTap: () {
-            // Handle the button tap here
-            // For example, navigate to the sign-up screen
-          },
+          onTap: () => context.go(RoutesPath.signUp),
           child: const Text(
             "Sign Up",
             style: TextStyle(
