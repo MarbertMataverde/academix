@@ -1,15 +1,12 @@
-import 'package:academix/configs/layout/responsive_layout.dart';
+import 'package:academix/configs/routes/routes_config.dart';
 import 'package:academix/configs/themes/provider/theme_data.dart';
 import 'package:academix/configs/themes/provider/theme_provider.dart';
-import 'package:academix/features/authentication/sign_in/view/phone/sign_in_phone_view.dart';
-import 'package:academix/features/authentication/sign_up/view/phone/sign_up_phone_view.dart';
-import 'package:academix/features/authentication/sign_up/view/tablet/sign_up_tablet_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'features/authentication/sign_up/view/desktop/sign_up_desktop_view.dart';
-
-// The main entry point of the Academix application.
+/// The main entry point of the Academix application.
+///
+/// The `Academix` widget serves as the root widget of the application. It initializes the application's theme and sets up the router for navigation.
 class Academix extends ConsumerStatefulWidget {
   const Academix({Key? key}) : super(key: key);
 
@@ -26,14 +23,16 @@ class _AcademixState extends ConsumerState<Academix> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    // Initialize the application's theme using the theme provider
+    final theme = themeData(ref);
+
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      theme: themeData(ref),
-      home: ResponsiveLayout(
-        phone: PhoneSignUpView(),
-        tablet: TabletSignUpView(),
-        desktop: DesktopSignUpView(),
-      ),
+      theme: theme,
+      // Configure the router for navigation
+      routeInformationParser: academixRouter.routeInformationParser,
+      routeInformationProvider: academixRouter.routeInformationProvider,
+      routerDelegate: academixRouter.routerDelegate,
     );
   }
 }
