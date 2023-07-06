@@ -6,8 +6,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:academix/components/custom_textformfield.dart';
 import 'package:academix/configs/themes/provider/theme_provider.dart';
-import 'package:academix/features/authentication/sign_up/provider/colleges.dart';
-import 'package:academix/features/authentication/sign_up/provider/genders.dart';
+import 'package:academix/features/authentication/sign_up/constants/colleges.dart';
+import 'package:academix/features/authentication/sign_up/constants/genders.dart';
 import 'package:academix/features/authentication/sign_up/utils/number_formater.dart';
 import 'package:academix/features/authentication/sign_up/widgets/custom_dropdownbutton_widget.dart';
 
