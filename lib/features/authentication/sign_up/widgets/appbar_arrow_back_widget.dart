@@ -1,8 +1,10 @@
+import 'package:academix/constants/routes_path.dart';
 import 'package:academix/configs/themes/colors/dark_theme_colors.dart';
 import 'package:academix/configs/themes/colors/light_theme_colors.dart';
 import 'package:academix/configs/themes/colors/mirage_theme_colors.dart';
 import 'package:academix/configs/themes/provider/theme_options.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 /// A custom AppBar widget that displays a back arrow button. The appearance of the arrow and the AppBar itself is based on the selected theme of the app.
 
@@ -10,12 +12,12 @@ import 'package:flutter/material.dart';
 ///
 /// The [context] parameter represents the build context of the app.
 /// The [themeState] parameter represents the current theme of the app as a string.
-AppBar appBarArrowBackWidget(BuildContext context, String themeState) {
+AppBar signUpArrowBackWidget(BuildContext context, String themeState) {
   return AppBar(
     elevation: 0,
     backgroundColor: Colors.transparent,
     leading: IconButton(
-      onPressed: () => Navigator.pop(context),
+      onPressed: () => context.go(RoutesPath.home),
       icon: Icon(
         Icons.keyboard_arrow_left_outlined,
         color: themeState == ThemeOptions.darkTheme

@@ -34,7 +34,7 @@ class PhoneSignUpView extends ConsumerWidget {
     final List<String> listOfColleges = [College.coa, College.cob, College.ccs];
 
     return Scaffold(
-      appBar: appBarArrowBackWidget(context, themeState),
+      appBar: signUpArrowBackWidget(context, themeState),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20, bottom: 40),

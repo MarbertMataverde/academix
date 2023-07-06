@@ -34,7 +34,7 @@ class TabletSignUpView extends ConsumerWidget {
     final List<String> listOfColleges = [College.coa, College.cob, College.ccs];
 
     return Scaffold(
-      appBar: appBarArrowBackWidget(context, themeState),
+      appBar: signUpArrowBackWidget(context, themeState),
       body: Center(
         child: SizedBox(
           width: mediaQuerySize.width * 0.95,
