@@ -4,6 +4,7 @@ import 'package:academix/configs/themes/styles/button_style.dart';
 import 'package:academix/constants/agreement_message.dart';
 import 'package:academix/constants/dialog_box_sizes.dart';
 import 'package:academix/constants/routes_path.dart';
+import 'package:academix/constants/sign_up_message_constant.dart';
 import 'package:academix/features/authentication/services/email_sign_up_services.dart';
 import 'package:academix/features/authentication/sign_up/widgets/create_account_text_animation_widget.dart';
 import 'package:academix/features/authentication/sign_up/widgets/custom_suffix_icon_widget.dart';
@@ -401,9 +402,10 @@ class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
                                           context: context,
                                           ref: ref,
                                           themeState: themeState,
-                                          title: 'Success',
-                                          message:
-                                              'We are pleased to inform you that you can now securely sign in to your account.',
+                                          title: SignUpMessage
+                                              .accountCreatedDialogTitle,
+                                          message: SignUpMessage
+                                              .accountCreatedDialogMessage,
                                           width: DialogBoxSize.desktopWidth,
                                           height: DialogBoxSize.desktopHeight,
                                           isWithCloseIconButton: false,
@@ -412,7 +414,7 @@ class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
                                                 const EdgeInsets.only(top: 20),
                                             child: DialogBoxButton(
                                               themeState: themeState,
-                                              label: 'Sign In',
+                                              label: 'Okay',
                                               onPressed: () {
                                                 context.pop();
                                                 context
