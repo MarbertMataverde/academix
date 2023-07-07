@@ -1,22 +1,53 @@
+import 'package:academix/components/custom_dialog_box.dart';
 import 'package:academix/configs/themes/provider/theme_options.dart';
 import 'package:academix/configs/themes/provider/theme_provider.dart';
 import 'package:academix/configs/themes/styles/button_style.dart';
 import 'package:academix/constants/assets_path.dart';
 import 'package:academix/components/custom_textformfield.dart';
+import 'package:academix/constants/dialog_box_sizes.dart';
+import 'package:academix/features/authentication/services/sign_in_services.dart';
+import 'package:academix/features/authentication/sign_in/widgets/authenticating_spinner_widget.dart';
 import 'package:academix/features/authentication/sign_in/widgets/divider_widget.dart';
 import 'package:academix/features/authentication/sign_in/widgets/sign_up_text_widget.dart';
+import 'package:academix/features/authentication/validator/field_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-/// A widget that represents the tablet view of the sign-in screen.
-class TabletSignInView extends ConsumerWidget {
+class TabletSignInView extends ConsumerStatefulWidget {
   const TabletSignInView({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final themeState = ref.watch(themeStateProvider);
+  ConsumerState<ConsumerStatefulWidget> createState() =>
+      _TabletSignInViewState();
+}
 
+class _TabletSignInViewState extends ConsumerState<TabletSignInView> {
+  // isAuthenticating
+  final isAuthenticating = StateProvider<bool>((ref) => false);
+  // Form Key
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  late final TextEditingController userEmailAddress;
+  late final TextEditingController userPassword;
+
+  @override
+  void initState() {
+    super.initState();
+    userEmailAddress = TextEditingController();
+    userPassword = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    userEmailAddress.dispose();
+    userPassword.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final themeState = ref.watch(themeStateProvider);
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
@@ -50,7 +81,16 @@ class TabletSignInView extends ConsumerWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     style: elevatedButtonStyle(themeState: themeState),
-                    onPressed: () {},
+                    onPressed: () => customDialogBox(
+                      context: context,
+                      ref: ref,
+                      themeState: themeState,
+                      title: 'Feature Coming Soon',
+                      message:
+                          'We regret to inform you that the Google Sign-In feature has not been implemented yet. We apologize for any inconvenience caused and assure you that we are working diligently to make it available as soon as possible. Thank you for your understanding.',
+                      width: DialogBoxSize.tabletWidth,
+                      height: DialogBoxSize.tabletHeight,
+                    ),
                     child: const Text('Continue with Google'),
                   ),
                 ),
@@ -58,20 +98,25 @@ class TabletSignInView extends ConsumerWidget {
                 DividerWidget(themeState: themeState),
                 const SizedBox(height: 20),
                 Form(
+                  key: _formKey,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       CustomTextFormField(
+                        controller: userEmailAddress,
                         themeState: themeState,
-                        hintText: 'Academix@email.com',
+                        hintText: 'Academix@email.edu',
                         keyboardType: TextInputType.emailAddress,
+                        validator: (value) => emailValidator(value),
                       ),
                       const SizedBox(height: 10),
                       CustomTextFormField(
+                        controller: userPassword,
                         obscureText: true,
                         themeState: themeState,
                         hintText: 'Password',
                         keyboardType: TextInputType.visiblePassword,
+                        validator: (value) => signInPasswordValidator(value),
                       ),
                     ],
                   ),
@@ -90,14 +135,34 @@ class TabletSignInView extends ConsumerWidget {
                   ),
                 ),
                 const SizedBox(height: 30),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    style: elevatedButtonStyle(themeState: themeState),
-                    onPressed: () {},
-                    child: const Text('Sign In'),
-                  ),
-                ),
+                ref.watch(isAuthenticating)
+                    ? AuthenticatingSpinnerWidget(themeState: themeState)
+                    : SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          style: elevatedButtonStyle(themeState: themeState),
+                          onPressed: () async {
+                            if (_formKey.currentState!.validate()) {
+                              ref
+                                  .read(isAuthenticating.notifier)
+                                  .update((state) => true);
+
+                              await signIn(
+                                userEmail: userEmailAddress.value.text.trim(),
+                                userPassword: userPassword.value.text,
+                                context: context,
+                                ref: ref,
+                                themeState: themeState,
+                              );
+
+                              ref
+                                  .read(isAuthenticating.notifier)
+                                  .update((state) => false);
+                            }
+                          },
+                          child: const Text('Sign In'),
+                        ),
+                      ),
                 const SizedBox(height: 40),
                 const SignUpTextWidget(),
               ],
