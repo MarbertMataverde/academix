@@ -175,6 +175,7 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                         ),
                         const SizedBox(height: 10),
                         Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             CustomTextFormField(
                               controller: userContactNumber,
