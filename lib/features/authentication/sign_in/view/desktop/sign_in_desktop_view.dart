@@ -1,9 +1,11 @@
+import 'package:academix/components/custom_dialog_box.dart';
 import 'package:academix/configs/themes/provider/change_theme.dart';
 import 'package:academix/configs/themes/provider/save_user_theme.dart';
 import 'package:academix/configs/themes/provider/theme_options.dart';
 import 'package:academix/configs/themes/provider/theme_provider.dart';
 import 'package:academix/configs/themes/styles/button_style.dart';
 import 'package:academix/components/custom_textformfield.dart';
+import 'package:academix/constants/dialog_box_sizes.dart';
 import 'package:academix/features/authentication/sign_in/widgets/divider_widget.dart';
 import 'package:academix/features/authentication/sign_in/view/desktop/widgets/logo_with_text_desktop_widget.dart';
 import 'package:academix/features/authentication/sign_in/widgets/sign_up_text_widget.dart';
@@ -59,7 +61,16 @@ class _DesktopViewState extends ConsumerState<DesktopSignInView> {
                           width: double.infinity,
                           child: ElevatedButton(
                             style: elevatedButtonStyle(themeState: themeState),
-                            onPressed: () {},
+                            onPressed: () => customDialogBox(
+                              context: context,
+                              ref: ref,
+                              themeState: themeState,
+                              title: 'Feature Coming Soon',
+                              message:
+                                  'We regret to inform you that the Google Sign-In feature has not been implemented yet. We apologize for any inconvenience caused and assure you that we are working diligently to make it available as soon as possible. Thank you for your understanding.',
+                              width: DialogBoxSize.desktopWidth,
+                              height: DialogBoxSize.desktopHeight,
+                            ),
                             child: const Text('Continue with Google'),
                           ),
                         ),
