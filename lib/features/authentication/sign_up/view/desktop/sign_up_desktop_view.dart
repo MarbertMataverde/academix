@@ -174,6 +174,7 @@ class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
                         ),
                         const SizedBox(height: 10),
                         Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             // Contact Number field
                             CustomTextFormField(
