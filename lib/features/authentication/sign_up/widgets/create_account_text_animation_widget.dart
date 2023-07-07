@@ -46,9 +46,12 @@ Future<dynamic> creatingAccountTextAnimation(
           child: AnimatedTextKit(
             isRepeatingAnimation: true,
             animatedTexts: [
-              RotateAnimatedText('CREATING YOUR ACCOUNT'),
-              RotateAnimatedText('WE APPRICIATE YOUR PATIENCE'),
-              RotateAnimatedText('YOU ARE AMAZING'),
+              RotateAnimatedText('CREATING YOUR ACCOUNT',
+                  textAlign: TextAlign.center),
+              RotateAnimatedText('WE APPRICIATE YOUR PATIENCE',
+                  textAlign: TextAlign.center),
+              RotateAnimatedText('YOU ARE AMAZING',
+                  textAlign: TextAlign.center),
             ],
           ),
         ),
