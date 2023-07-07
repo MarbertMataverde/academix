@@ -1,7 +1,4 @@
 import 'package:academix/components/custom_dialog_box.dart';
-import 'package:academix/configs/themes/colors/dark_theme_colors.dart';
-import 'package:academix/configs/themes/colors/light_theme_colors.dart';
-import 'package:academix/configs/themes/colors/mirage_theme_colors.dart';
 import 'package:academix/configs/themes/provider/change_theme.dart';
 import 'package:academix/configs/themes/provider/save_user_theme.dart';
 import 'package:academix/configs/themes/provider/theme_options.dart';
@@ -10,6 +7,7 @@ import 'package:academix/configs/themes/styles/button_style.dart';
 import 'package:academix/components/custom_textformfield.dart';
 import 'package:academix/constants/dialog_box_sizes.dart';
 import 'package:academix/features/authentication/services/sign_in_services.dart';
+import 'package:academix/features/authentication/sign_in/widgets/authenticating_spinner_widget.dart';
 import 'package:academix/features/authentication/sign_in/widgets/divider_widget.dart';
 import 'package:academix/features/authentication/sign_in/view/desktop/widgets/logo_with_text_desktop_widget.dart';
 import 'package:academix/features/authentication/sign_in/widgets/sign_up_text_widget.dart';
@@ -118,6 +116,7 @@ class _DesktopViewState extends ConsumerState<DesktopSignInView> {
                               ),
                               const SizedBox(height: 10),
                               CustomTextFormField(
+                                controller: userPassword,
                                 obscureText: true,
                                 themeState: themeState,
                                 hintText: 'Password',
@@ -143,19 +142,8 @@ class _DesktopViewState extends ConsumerState<DesktopSignInView> {
                         ),
                         const SizedBox(height: 30),
                         ref.watch(isAuthenticating)
-                            ? Center(
-                                child: SizedBox(
-                                  width: 25,
-                                  height: 25,
-                                  child: CircularProgressIndicator(
-                                    color: themeState == ThemeOptions.darkTheme
-                                        ? DarkThemeColors.foregroundColor
-                                        : themeState == ThemeOptions.mirageTheme
-                                            ? MirageThemeColors.foregroundColor
-                                            : LightThemeColors.foregroundColor,
-                                  ),
-                                ),
-                              )
+                            ? AuthenticatingSpinnerWidget(
+                                themeState: themeState)
                             : SizedBox(
                                 width: double.infinity,
                                 child: ElevatedButton(
