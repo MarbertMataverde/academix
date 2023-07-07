@@ -5,7 +5,7 @@ import 'package:academix/constants/agreement_message.dart';
 import 'package:academix/constants/dialog_box_sizes.dart';
 import 'package:academix/constants/routes_path.dart';
 import 'package:academix/features/authentication/services/email_sign_up_services.dart';
-import 'package:academix/features/authentication/sign_up/widgets/create_account_text_annimation_widget.dart';
+import 'package:academix/features/authentication/sign_up/widgets/create_account_text_animation_widget.dart';
 import 'package:academix/features/authentication/sign_up/widgets/custom_suffix_icon_widget.dart';
 import 'package:academix/features/authentication/validator/field_validator.dart';
 import 'package:flutter/material.dart';
