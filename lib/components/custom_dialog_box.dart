@@ -1,4 +1,8 @@
 import 'package:academix/components/custom_material_icon_button.dart';
+import 'package:academix/configs/themes/colors/dark_theme_colors.dart';
+import 'package:academix/configs/themes/colors/light_theme_colors.dart';
+import 'package:academix/configs/themes/colors/mirage_theme_colors.dart';
+import 'package:academix/configs/themes/provider/theme_options.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -33,6 +37,7 @@ Future<dynamic> customDialogBox({
   bool isWithCloseIconButton = true,
   bool isDissmisable = false,
   Widget? widget,
+  Function()? closeButtonOnPressed,
 }) async {
   return showDialog(
     barrierDismissible: isDissmisable,
@@ -49,7 +54,13 @@ Future<dynamic> customDialogBox({
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
               border: Border.all(
-                  width: 2, color: Theme.of(context).scaffoldBackgroundColor),
+                width: 1,
+                color: themeState == ThemeOptions.darkTheme
+                    ? DarkThemeColors.foregroundSecondColor
+                    : themeState == ThemeOptions.mirageTheme
+                        ? MirageThemeColors.foregroundSecondColor
+                        : LightThemeColors.scaffoldBackgroundColor,
+              ),
             ),
           ),
           // Rotated container for visual effect
@@ -59,7 +70,11 @@ Future<dynamic> customDialogBox({
               width: width,
               height: height,
               decoration: BoxDecoration(
-                color: Theme.of(context).scaffoldBackgroundColor,
+                color: themeState == ThemeOptions.darkTheme
+                    ? DarkThemeColors.buttonBackgroundColor
+                    : themeState == ThemeOptions.mirageTheme
+                        ? MirageThemeColors.buttonBackgroundColor
+                        : LightThemeColors.scaffoldBackgroundColor,
                 borderRadius: BorderRadius.circular(25),
               ),
               child: isWithCloseIconButton
@@ -70,7 +85,8 @@ Future<dynamic> customDialogBox({
                         child: customMaterialIconButton(
                             ref: ref,
                             themeState: themeState,
-                            onPressed: () => context.pop()),
+                            onPressed:
+                                closeButtonOnPressed ?? () => context.pop()),
                       ),
                     )
                   : Container(),
@@ -112,19 +128,3 @@ Future<dynamic> customDialogBox({
     ),
   );
 }
-
-
-// Padding(
-//         padding: const EdgeInsets.only(top: 20),
-//         child: SizedBox(
-//           width: 100,
-//           height: 30,
-//           child: ElevatedButton(
-//             style: elevatedButtonStyle(
-//               themeState: themeState,
-//             ),
-//             onPressed: singleButtonOnPressed ?? () => context.pop(),
-//             child: Text(singleButtonText ?? 'Okay'),
-//           ),
-//         ),
-//       );
