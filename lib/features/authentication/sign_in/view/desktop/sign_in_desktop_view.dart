@@ -11,6 +11,7 @@ import 'package:academix/features/authentication/sign_in/widgets/authenticating_
 import 'package:academix/features/authentication/sign_in/widgets/divider_widget.dart';
 import 'package:academix/features/authentication/sign_in/view/desktop/widgets/logo_with_text_desktop_widget.dart';
 import 'package:academix/features/authentication/sign_in/widgets/sign_up_text_widget.dart';
+import 'package:academix/features/authentication/sign_up/widgets/custom_suffix_icon_widget.dart';
 import 'package:academix/features/authentication/validator/field_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,6 +27,10 @@ class DesktopSignInView extends ConsumerStatefulWidget {
 class _DesktopViewState extends ConsumerState<DesktopSignInView> {
   // isAuthenticating
   final isAuthenticating = StateProvider<bool>((ref) => false);
+
+  // isPasswordVisible
+  final isPasswordVisible = StateProvider<bool>((ref) => false);
+
   // Form Key
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -117,10 +122,15 @@ class _DesktopViewState extends ConsumerState<DesktopSignInView> {
                               const SizedBox(height: 10),
                               CustomTextFormField(
                                 controller: userPassword,
-                                obscureText: true,
+                                obscureText: !ref.watch(isPasswordVisible),
                                 themeState: themeState,
                                 hintText: 'Password',
                                 keyboardType: TextInputType.visiblePassword,
+                                suffixIcon: CustomSuffixIconWidget(
+                                  ref: ref,
+                                  stateProvider: isPasswordVisible,
+                                  themeState: themeState,
+                                ),
                                 validator: (value) =>
                                     signInPasswordValidator(value),
                               ),

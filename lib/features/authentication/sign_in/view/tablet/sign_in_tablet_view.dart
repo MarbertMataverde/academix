@@ -9,6 +9,7 @@ import 'package:academix/features/authentication/services/sign_in_services.dart'
 import 'package:academix/features/authentication/sign_in/widgets/authenticating_spinner_widget.dart';
 import 'package:academix/features/authentication/sign_in/widgets/divider_widget.dart';
 import 'package:academix/features/authentication/sign_in/widgets/sign_up_text_widget.dart';
+import 'package:academix/features/authentication/sign_up/widgets/custom_suffix_icon_widget.dart';
 import 'package:academix/features/authentication/validator/field_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -25,6 +26,10 @@ class TabletSignInView extends ConsumerStatefulWidget {
 class _TabletSignInViewState extends ConsumerState<TabletSignInView> {
   // isAuthenticating
   final isAuthenticating = StateProvider<bool>((ref) => false);
+
+  // isPasswordVisible
+  final isPasswordVisible = StateProvider<bool>((ref) => false);
+
   // Form Key
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -112,9 +117,14 @@ class _TabletSignInViewState extends ConsumerState<TabletSignInView> {
                       const SizedBox(height: 10),
                       CustomTextFormField(
                         controller: userPassword,
-                        obscureText: true,
+                        obscureText: !ref.watch(isPasswordVisible),
                         themeState: themeState,
                         hintText: 'Password',
+                        suffixIcon: CustomSuffixIconWidget(
+                          ref: ref,
+                          stateProvider: isPasswordVisible,
+                          themeState: themeState,
+                        ),
                         keyboardType: TextInputType.visiblePassword,
                         validator: (value) => signInPasswordValidator(value),
                       ),
