@@ -1,8 +1,10 @@
 import 'package:academix/constants/regex.dart';
 
-/// The `firstNameValidator` function validates the first name field.
-///
-/// It takes a `value` parameter and checks if it is empty. If it is empty, it returns an error message 'Enter your first name.'; otherwise, it returns `null`, indicating that the value is valid.
+/// The following functions are used for validating form fields. Each function takes a `value` parameter and performs specific validations on it. If the value passes the validation, the function returns `null`, indicating that the value is valid. Otherwise, it returns an error message describing the validation failure.
+
+/// firstNameValidator: Validates the first name field.
+///   - Checks if the value is empty. Returns an error message if it is.
+///   - Returns `null` if the value is valid.
 String? firstNameValidator(value) {
   if (value!.isEmpty) {
     return 'Enter your first name.';
@@ -10,9 +12,9 @@ String? firstNameValidator(value) {
   return null;
 }
 
-/// The `middleNameValidator` function validates the middle name field.
-///
-/// It takes a `value` parameter and checks if it is empty. If it is empty, it returns an error message 'Enter your middle name.'; otherwise, it returns `null`, indicating that the value is valid.
+/// middleNameValidator: Validates the middle name field.
+///   - Checks if the value is empty. Returns an error message if it is.
+///   - Returns `null` if the value is valid.
 String? middleNameValidator(value) {
   if (value!.isEmpty) {
     return 'Enter your middle name.';
@@ -20,9 +22,9 @@ String? middleNameValidator(value) {
   return null;
 }
 
-/// The `lastNameValidator` function validates the last name field.
-///
-/// It takes a `value` parameter and checks if it is empty. If it is empty, it returns an error message 'Enter your last name.'; otherwise, it returns `null`, indicating that the value is valid.
+/// lastNameValidator: Validates the last name field.
+///   - Checks if the value is empty. Returns an error message if it is.
+///   - Returns `null` if the value is valid.
 String? lastNameValidator(value) {
   if (value!.isEmpty) {
     return 'Enter your last name.';
@@ -30,11 +32,10 @@ String? lastNameValidator(value) {
   return null;
 }
 
-/// The `contactNumberValidator` function validates the contact number field.
-///
-/// It takes a `value` parameter and checks if it is empty. If it is empty, it returns an error message 'Enter your contact number.'.
-/// It also checks if the value has exactly 11 digits. If not, it returns an error message 'Please enter an 11-digit number.'.
-/// If both conditions pass, it returns `null`, indicating that the value is valid.
+/// contactNumberValidator: Validates the contact number field.
+///   - Checks if the value is empty. Returns an error message if it is.
+///   - Checks if the value has exactly 11 digits. Returns an error message if it does not.
+///   - Returns `null` if the value is valid.
 String? contactNumberValidator(value) {
   if (value!.isEmpty) {
     return 'Enter your contact number.';
@@ -45,11 +46,10 @@ String? contactNumberValidator(value) {
   return null;
 }
 
-/// The `fullAddressValidator` function validates the full address field.
-///
-/// It takes a `value` parameter and checks if it is empty. If it is empty, it returns an error message 'Enter your full address.'.
-/// It also checks if the value has a minimum length of 10 characters. If not, it returns an error message 'Minimum 10 characters required for full address.'.
-/// If both conditions pass, it returns `null`, indicating that the value is valid.
+/// fullAddressValidator: Validates the full address field.
+///   - Checks if the value is empty. Returns an error message if it is.
+///   - Checks if the value has a minimum length of 10 characters. Returns an error message if it does not.
+///   - Returns `null` if the value is valid.
 String? fullAddressValidator(value) {
   if (value!.isEmpty) {
     return 'Enter your full address.';
@@ -60,11 +60,10 @@ String? fullAddressValidator(value) {
   return null;
 }
 
-/// The `studentNumberValidator` function validates the student number field.
-///
-/// It takes a `value` parameter and checks if it is empty. If it is empty, it returns an error message 'Enter your student number.'.
-/// It also checks if the value has exactly 10 digits. If not, it returns an error message 'Please enter your 10-digit student number.'.
-/// If both conditions pass, it returns `null`, indicating that the value is valid.
+/// studentNumberValidator: Validates the student number field.
+///   - Checks if the value is empty. Returns an error message if it is.
+///   - Checks if the value has exactly 10 digits. Returns an error message if it does not.
+///   - Returns `null` if the value is valid.
 String? studentNumberValidator(value) {
   if (value!.isEmpty) {
     return 'Enter your student number.';
@@ -75,12 +74,10 @@ String? studentNumberValidator(value) {
   return null;
 }
 
-/// The `emailValidator` function validates the email address field.
-///
-/// It takes a `value` parameter and performs two validations.
-/// First, it checks if the value is empty. If it is empty, it returns an error message 'Please enter an email.'.
-/// Second, it uses a regular expression pattern to validate the email format. If the value does not match the pattern, it returns an error message 'Please enter a valid email.'.
-/// If both validations pass, it returns `null`, indicating that the value is valid.
+/// emailValidator: Validates the email address field.
+///   - Checks if the value is empty. Returns an error message if it is.
+///   - Uses a regular expression pattern to validate the email format. Returns an error message if the value does not match the pattern.
+///   - Returns `null` if the value is valid.
 String? emailValidator(value) {
   if (value!.isEmpty) {
     return 'Please enter an email.';
@@ -91,13 +88,11 @@ String? emailValidator(value) {
   return null;
 }
 
-/// The `passwordValidator` function validates the password field.
-///
-/// It takes a `value` parameter and performs multiple validations.
-/// First, it checks if the value is empty. If it is empty, it returns an error message 'Please enter a password'.
-/// Then, it checks if the value has a length less than 8 characters. If it does, it returns an error message 'Password must be at least 8 characters'.
-/// Next, it checks if the value contains at least one uppercase letter, lowercase letter, number, and special character using regular expressions. If any of these conditions are not met, it returns the corresponding error message.
-/// If all validations pass, it returns `null`, indicating that the value is valid.
+/// passwordValidator: Validates the password field.
+///   - Checks if the value is empty. Returns an error message if it is.
+///   - Checks if the value has a length less than 8 characters. Returns an error message if it does.
+///   - Checks if the value contains at least one uppercase letter, lowercase letter, number, and special character using regular expressions. Returns the corresponding error message if any of these conditions are not met.
+///   - Returns `null` if the value is valid.
 String? passwordValidator(value) {
   if (value!.isEmpty) {
     return 'Please enter a password';
@@ -111,6 +106,16 @@ String? passwordValidator(value) {
     return 'Password must contain at least one number';
   } else if (!value.contains(RegExp(r'[!@#\$%\^&\*]'))) {
     return 'Password must contain at least one special character';
+  }
+  return null;
+}
+
+/// signInPasswordValidator: Validates the password field for sign-in.
+///   - Checks if the value is empty. Returns an error message if it is.
+///   - Returns `null` if the value is valid.
+String? signInPasswordValidator(value) {
+  if (value!.isEmpty) {
+    return 'Please enter your password.';
   }
   return null;
 }
