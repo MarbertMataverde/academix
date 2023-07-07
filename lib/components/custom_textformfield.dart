@@ -35,6 +35,12 @@ class CustomTextFormField extends StatelessWidget {
   /// The suffix icon widget to display at the end of the text field.
   final Widget? suffixIcon;
 
+  /// The validator of the field
+  final String? Function(String?)? validator;
+
+  /// The text editing cotroller
+  final TextEditingController? controller;
+
   /// Creates a `CustomTextFormField`.
   ///
   /// The `themeState` parameter represents the current theme of the app as a string.
@@ -52,6 +58,8 @@ class CustomTextFormField extends StatelessWidget {
     this.inputFomater,
     this.maxLength,
     this.suffixIcon,
+    this.validator,
+    this.controller,
   }) : super(key: key);
 
   @override
@@ -60,6 +68,8 @@ class CustomTextFormField extends StatelessWidget {
       width: width ?? double.infinity,
       height: height ?? 50,
       child: TextFormField(
+        controller: controller,
+        validator: validator,
         autofocus: false,
         autocorrect: false,
         obscureText: obscureText ?? false,
