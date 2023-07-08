@@ -1,5 +1,7 @@
 import 'package:academix/components/custom_dialog_box.dart';
 import 'package:academix/constants/account_document_field_name.dart';
+import 'package:academix/constants/error_messages.dart';
+import 'package:academix/features/authentication/temporary_bug_fixes/sign_in_fix/parse_exeption_message.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -81,14 +83,33 @@ Future<void> emailSignUp({
       },
     );
   } on FirebaseAuthException catch (e) {
+    // Temporary Fix
+    final code = parseFirebaseAuthExceptionMessage(input: e.message);
+    switch (code) {
+      case 'email-already-in-use':
+        customDialogBox(
+            ref: ref,
+            themeState: themeState,
+            context: context,
+            title: 'Email Already In Use',
+            message: SignUpErrorMessage.emailAlreadyInUse);
+        break;
+
+      default:
+        customDialogBox(
+            ref: ref,
+            themeState: themeState,
+            context: context,
+            title: code, // temporary fix
+            message: e.message.toString());
+    }
+  } catch (error) {
     customDialogBox(
-      context: context,
       ref: ref,
       themeState: themeState,
-      title: 'Something is not right.',
-      message: '${e.message}',
-      width: 300,
-      height: 300,
+      context: context,
+      title: 'Something Went Wrong',
+      message: error.toString(),
     );
   }
 }
