@@ -32,8 +32,8 @@ Future<dynamic> customDialogBox({
   required String themeState,
   required String title,
   required String message,
-  required double width,
-  required double height,
+  double? width,
+  double? height,
   bool isWithCloseIconButton = true,
   bool isDissmisable = false,
   Widget? widget,
@@ -49,8 +49,8 @@ Future<dynamic> customDialogBox({
         children: [
           // Background container
           Container(
-            width: width,
-            height: height,
+            width: width ?? 300,
+            height: height ?? 300,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
               border: Border.all(
@@ -67,8 +67,8 @@ Future<dynamic> customDialogBox({
           Transform.rotate(
             angle: -0.08,
             child: Container(
-              width: width,
-              height: height,
+              width: width ?? 300,
+              height: height ?? 300,
               decoration: BoxDecoration(
                 color: themeState == ThemeOptions.darkTheme
                     ? DarkThemeColors.buttonBackgroundColor
@@ -94,8 +94,8 @@ Future<dynamic> customDialogBox({
           ),
           // Message container
           SizedBox(
-            width: width,
-            height: height,
+            width: width ?? 300,
+            height: height ?? 300,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
