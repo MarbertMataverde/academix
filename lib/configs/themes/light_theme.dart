@@ -13,11 +13,10 @@ final ThemeData lightThemeData = ThemeData(
   scaffoldBackgroundColor: LightThemeColors.scaffoldBackgroundColor,
 
   // Customize the color scheme for the theme.
-  colorScheme: const ColorScheme.light().copyWith(
-    // Set the error color.
+  colorScheme: const ColorScheme.light(
+    primary: LightThemeColors.primaryColor,
+    secondary: LightThemeColors.secondaryColor,
     error: LightThemeColors.errorColor,
-
-    // Set the shadow color.
     shadow: LightThemeColors.shadowColor,
   ),
 

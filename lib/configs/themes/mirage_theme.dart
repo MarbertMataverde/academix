@@ -13,11 +13,10 @@ final ThemeData mirageThemeData = ThemeData(
   scaffoldBackgroundColor: MirageThemeColors.scaffoldBackgroundColor,
 
   // Customize the color scheme for the theme.
-  colorScheme: const ColorScheme.dark().copyWith(
-    // Set the error color.
+  colorScheme: const ColorScheme.dark(
+    primary: MirageThemeColors.primaryColor,
+    secondary: MirageThemeColors.secondaryColor,
     error: MirageThemeColors.errorColor,
-
-    // Set the shadow color.
     shadow: MirageThemeColors.shadowColor,
   ),
 

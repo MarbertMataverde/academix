@@ -13,11 +13,11 @@ final ThemeData darkThemeData = ThemeData(
   scaffoldBackgroundColor: DarkThemeColors.scaffoldBackgroundColor,
 
   // Customize the color scheme for the theme.
-  colorScheme: const ColorScheme.dark().copyWith(
-    // Set the error color.
-    error: DarkThemeColors.errorColor,
 
-    // Set the shadow color.
+  colorScheme: const ColorScheme.dark(
+    primary: DarkThemeColors.primaryColor,
+    secondary: DarkThemeColors.secondaryColor,
+    error: DarkThemeColors.errorColor,
     shadow: DarkThemeColors.shadowColor,
   ),
 
