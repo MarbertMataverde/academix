@@ -20,3 +20,8 @@ class SignInErrorMessage {
   static const String emailAlreadyInUseMessage =
       'That email is already registered in our database. Please try resetting your password or using a different email.';
 }
+
+class SignUpErrorMessage {
+  static const String emailAlreadyInUse =
+      'That email is already registered. Please try signing in or use a different email.';
+}
