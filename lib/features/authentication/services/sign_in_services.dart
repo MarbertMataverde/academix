@@ -36,7 +36,7 @@ Future<void> signIn({
             themeState: themeState,
             context: context,
             title: 'Wrong Password',
-            message: ErrorMessage.wrongPasswordMessage);
+            message: SignInErrorMessage.wrongPasswordMessage);
         break;
       case 'user-not-found':
         customDialogBox(
@@ -44,7 +44,7 @@ Future<void> signIn({
             themeState: themeState,
             context: context,
             title: 'User Not Found',
-            message: ErrorMessage.userNotFoundMessage);
+            message: SignInErrorMessage.userNotFoundMessage);
         break;
       case 'user-disabled':
         customDialogBox(
@@ -52,7 +52,7 @@ Future<void> signIn({
             themeState: themeState,
             context: context,
             title: 'User Disabled',
-            message: ErrorMessage.userDisabledMessage);
+            message: SignInErrorMessage.userDisabledMessage);
         break;
       case 'too-many-requests':
         customDialogBox(
@@ -60,7 +60,7 @@ Future<void> signIn({
             themeState: themeState,
             context: context,
             title: 'Too Many Request',
-            message: ErrorMessage.tooManyRequestMessage);
+            message: SignInErrorMessage.tooManyRequestMessage);
         break;
       case 'network-request-failed':
         customDialogBox(
@@ -68,7 +68,7 @@ Future<void> signIn({
             themeState: themeState,
             context: context,
             title: 'No Internet Connection',
-            message: ErrorMessage.networkRequestFailedMessage);
+            message: SignInErrorMessage.networkRequestFailedMessage);
         break;
       default:
         customDialogBox(

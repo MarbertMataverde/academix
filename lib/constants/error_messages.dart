@@ -1,4 +1,4 @@
-class ErrorMessage {
+class SignInErrorMessage {
   static const String wrongPasswordMessage =
       'Sorry, the password is incorrect. Please try again or click \'Forgot Password\' to update it.';
 
