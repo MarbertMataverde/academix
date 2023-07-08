@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 // This class defines a set of color constants for the Mirage theme in the application.
 class MirageThemeColors {
   // The primary color used in the Mirage theme.
-  static const Color primaryColor = Color(0xFFFFCC66);
+  static const Color primaryColor = Color(0xFFCCCAC2);
+
+  // The secondary color used in the Mirage theme.
+  static const Color secondaryColor = Color(0xFF707A8C);
 
   // The background color for the scaffold (the main app screen) in the Mirage theme.
   static const Color scaffoldBackgroundColor = Color(0xFF1F2430);

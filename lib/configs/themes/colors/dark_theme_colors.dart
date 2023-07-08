@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 // This class defines a set of color constants for the dark theme in the application.
 class DarkThemeColors {
-  // The primary color used in the dark theme.
-  static const Color primaryColor = Color(0xFFE6B450);
+  // The primary color used in the light theme.
+  static const Color primaryColor = Color(0xFFBFBDB6);
+
+  // The secondary color used in the light theme.
+  static const Color secondaryColor = Color(0xFF565B66);
 
   // The background color for the scaffold (the main app screen) in the dark theme.
   static const Color scaffoldBackgroundColor = Color(0xFF0B0E14);

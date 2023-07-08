@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 // This class defines a set of color constants for the light theme in the application.
 class LightThemeColors {
   // The primary color used in the light theme.
-  static const Color primaryColor = Color(0xFFFFAA33);
+  static const Color primaryColor = Color(0xFF5C6166);
+
+  // The secondary color used in the light theme.
+  static const Color secondaryColor = Color(0xFF8A9199);
 
   // The background color for the scaffold (the main app screen) in the light theme.
   static const Color scaffoldBackgroundColor = Color(0xFFF8F9FA);
