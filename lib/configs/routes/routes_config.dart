@@ -1,4 +1,5 @@
 import 'package:academix/configs/layout/responsive_layout.dart';
+import 'package:academix/configs/routes/error_page/page_not_found.dart';
 import 'package:academix/constants/routes_path.dart';
 import 'package:academix/features/authentication/forgot_password/view/desktop/desktop_forgot_password.dart';
 import 'package:academix/features/authentication/forgot_password/view/phone/phone_forgot_password.dart';
@@ -19,7 +20,7 @@ import 'package:go_router/go_router.dart';
 /// The `academixRouter` instance of the [GoRouter] class defines the routes and their corresponding builders for different screens in the application.
 /// The router is responsible for handling navigation and rendering the appropriate screen based on the current route.
 GoRouter academixRouter = GoRouter(
-  // TODO build error builder UI for all devices
+  errorBuilder: (context, state) => const PageNotFound(),
   routes: [
     // Home route
     GoRoute(
