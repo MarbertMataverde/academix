@@ -98,7 +98,7 @@ Future<dynamic> customDialogBox({
             width: width ?? 300,
             height: height ?? 300,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
