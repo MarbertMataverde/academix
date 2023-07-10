@@ -103,7 +103,7 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
     final List<String> listOfColleges = [College.coa, College.cob, College.ccs];
 
     return Scaffold(
-      appBar: signUpArrowBackWidget(context, themeState),
+      appBar: appBarArrowBackWidget(context, ref),
       body: Center(
         child: SizedBox(
           width: mediaQuerySize.width * 0.95,
