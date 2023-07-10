@@ -27,7 +27,7 @@ class ForgotPasswordTextButtonWidget extends StatelessWidget {
         splashColor: Colors.transparent,
         splashFactory: NoSplash.splashFactory,
         hoverColor: Colors.transparent,
-        onTap: () => context.push(RoutesPath.forgotPassword),
+        onTap: () => context.go(RoutesPath.forgotPassword),
         child: const Padding(
           padding: EdgeInsets.all(5.0),
           child: Text('Forgot Password?'),
