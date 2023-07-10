@@ -271,7 +271,7 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                     child: ElevatedButton(
                       style: elevatedButtonStyle(
                         buttonWidth: 200,
-                        buttonHeight: 45,
+                        buttonHeight: 50,
                         ref: ref,
                       ),
                       onPressed: () async {

@@ -6,6 +6,7 @@ import 'package:academix/constants/dialog_box_sizes.dart';
 import 'package:academix/constants/routes_path.dart';
 import 'package:academix/constants/sign_up_message_constant.dart';
 import 'package:academix/features/authentication/services/email_sign_up_services.dart';
+import 'package:academix/features/authentication/sign_up/widgets/appbar_arrow_back_widget.dart';
 import 'package:academix/features/authentication/sign_up/widgets/create_account_text_animation_widget.dart';
 import 'package:academix/features/authentication/sign_up/widgets/custom_suffix_icon_widget.dart';
 import 'package:academix/features/authentication/validator/field_validator.dart';
@@ -20,17 +21,17 @@ import 'package:academix/features/authentication/sign_up/utils/number_formater.d
 import 'package:academix/features/authentication/sign_up/widgets/custom_dropdownbutton_widget.dart';
 import 'package:go_router/go_router.dart';
 
-// View for the desktop sign-up screen
-class DesktopSignUpView extends ConsumerStatefulWidget {
-  const DesktopSignUpView({Key? key}) : super(key: key);
+// View for the talbet sign-up screen
+class TabletSignUpView extends ConsumerStatefulWidget {
+  const TabletSignUpView({super.key});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() =>
-      _DesktopSignUpViewState();
+      _TabletSignUpViewState();
 }
 
-// State for the desktop sign-up screen
-class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
+// State for the tablet sign-up screen
+class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
   // Form Key
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -102,13 +103,14 @@ class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
     final List<String> listOfColleges = [College.coa, College.cob, College.ccs];
 
     return Scaffold(
+      appBar: signUpArrowBackWidget(context, themeState),
       body: Center(
         child: SizedBox(
-          width: mediaQuerySize.width * 0.8,
+          width: mediaQuerySize.width * 0.95,
           height: mediaQuerySize.height,
           child: SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 50),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -137,7 +139,7 @@ class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
                         // Personal Information
                         const Text(
                           'Personal Information',
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 18),
                         ),
                         const SizedBox(height: 10),
                         Row(
@@ -146,7 +148,7 @@ class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
                             // First Name field
                             CustomTextFormField(
                               controller: userFirstName,
-                              width: mediaQuerySize.width * 0.8 / 3.1,
+                              width: mediaQuerySize.width * 0.95 / 3.05,
                               ref: ref,
                               hintText: 'First Name',
                               keyboardType: TextInputType.text,
@@ -156,17 +158,16 @@ class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
                             // Middle Name field
                             CustomTextFormField(
                               controller: userMiddleName,
-                              width: mediaQuerySize.width * 0.8 / 3.1,
+                              width: mediaQuerySize.width * 0.95 / 3.05,
                               ref: ref,
                               hintText: 'Middle Name',
                               keyboardType: TextInputType.text,
                               validator: (value) => middleNameValidator(value),
                             ),
                             const Spacer(),
-                            // Last Name field
                             CustomTextFormField(
                               controller: userLastName,
-                              width: mediaQuerySize.width * 0.8 / 3.1,
+                              width: mediaQuerySize.width * 0.95 / 3.05,
                               ref: ref,
                               hintText: 'Last Name',
                               keyboardType: TextInputType.text,
@@ -178,10 +179,9 @@ class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // Contact Number field
                             CustomTextFormField(
                               controller: userContactNumber,
-                              width: mediaQuerySize.width * 0.8 / 3.1,
+                              width: mediaQuerySize.width * 0.95 / 3.05,
                               ref: ref,
                               inputFomater: numberFormater,
                               hintText: 'Contact Number',
@@ -190,17 +190,15 @@ class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
                                   contactNumberValidator(value),
                             ),
                             const Spacer(),
-                            // Full Address field
                             CustomTextFormField(
                               controller: userFullAddress,
-                              width: mediaQuerySize.width * 0.8 / 2.1,
+                              width: mediaQuerySize.width * 0.95 / 2.05,
                               ref: ref,
                               hintText: 'Full Address',
                               keyboardType: TextInputType.text,
                               validator: (value) => fullAddressValidator(value),
                             ),
                             const Spacer(),
-                            // Gender dropdown
                             CustomDropdownButtonWidget(
                               ref: ref,
                               listOfItems: listOfGenders,
@@ -221,13 +219,12 @@ class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
                                 // Student Information
                                 const Text(
                                   'Student Information',
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 18),
                                 ),
                                 const SizedBox(height: 10),
-                                // Student Number field
                                 CustomTextFormField(
                                   controller: userStudentNumber,
-                                  width: mediaQuerySize.width * 0.8 / 2.1,
+                                  width: mediaQuerySize.width * 0.95 / 2.05,
                                   ref: ref,
                                   inputFomater: numberFormater,
                                   hintText: 'Student Number',
@@ -238,9 +235,8 @@ class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
                                 const SizedBox(
                                   height: 10,
                                 ),
-                                // College dropdown
                                 CustomDropdownButtonWidget(
-                                  width: mediaQuerySize.width * 0.8 / 2.1,
+                                  width: mediaQuerySize.width * 0.95 / 2.05,
                                   ref: ref,
                                   listOfItems: listOfColleges,
                                   hint: 'College',
@@ -259,15 +255,12 @@ class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
                                 // Account Information
                                 const Text(
                                   'Account Information',
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 18),
                                 ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                // Email Address field
+                                const SizedBox(height: 10),
                                 CustomTextFormField(
                                   controller: userEmailAddress,
-                                  width: mediaQuerySize.width * 0.8 / 2.1,
+                                  width: mediaQuerySize.width * 0.95 / 2.05,
                                   ref: ref,
                                   hintText: 'Email Address',
                                   keyboardType: TextInputType.emailAddress,
@@ -276,15 +269,14 @@ class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
                                 const SizedBox(
                                   height: 10,
                                 ),
-                                // Password field
                                 CustomTextFormField(
                                   controller: userPassword,
-                                  width: mediaQuerySize.width * 0.8 / 2.1,
+                                  width: mediaQuerySize.width * 0.95 / 2.05,
                                   ref: ref,
                                   hintText: 'Password',
-                                  keyboardType: TextInputType.visiblePassword,
                                   validator: (value) =>
                                       passwordValidator(value),
+                                  keyboardType: TextInputType.visiblePassword,
                                   obscureText: !ref
                                       .watch(isPasswordVisibleStateProvider),
                                   suffixIcon: CustomSuffixIconWidget(
@@ -296,10 +288,9 @@ class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
                                 const SizedBox(
                                   height: 10,
                                 ),
-                                // Confirm Password field
                                 CustomTextFormField(
                                   controller: userConfirmedPassword,
-                                  width: mediaQuerySize.width * 0.8 / 2.1,
+                                  width: mediaQuerySize.width * 0.95 / 2.05,
                                   ref: ref,
                                   hintText: 'Confirm Password',
                                   keyboardType: TextInputType.visiblePassword,
@@ -337,9 +328,9 @@ class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
                           alignment: Alignment.center,
                           child: ElevatedButton(
                             style: elevatedButtonStyle(
-                              ref: ref,
                               buttonWidth: 200,
-                              buttonHeight: 45,
+                              buttonHeight: 50,
+                              ref: ref,
                             ),
                             onPressed: () async {
                               Future.delayed(
@@ -448,7 +439,7 @@ class _DesktopSignUpViewState extends ConsumerState<DesktopSignUpView> {
                         ),
                       ],
                     ),
-                  ),
+                  )
                 ],
               ),
             ),
