@@ -8,6 +8,7 @@ import 'package:academix/constants/dialog_box_sizes.dart';
 import 'package:academix/features/authentication/services/sign_in_services.dart';
 import 'package:academix/features/authentication/sign_in/widgets/authenticating_spinner_widget.dart';
 import 'package:academix/features/authentication/sign_in/widgets/divider_widget.dart';
+import 'package:academix/features/authentication/sign_in/widgets/forgot_password_text_button.dart';
 import 'package:academix/features/authentication/sign_in/widgets/sign_up_text_widget.dart';
 import 'package:academix/features/authentication/sign_up/widgets/custom_suffix_icon_widget.dart';
 import 'package:academix/features/authentication/validator/field_validator.dart';
@@ -131,19 +132,7 @@ class _TabletSignInViewState extends ConsumerState<TabletSignInView> {
                     ],
                   ),
                 ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: InkWell(
-                    splashColor: Colors.transparent,
-                    splashFactory: NoSplash.splashFactory,
-                    hoverColor: Colors.transparent,
-                    onTap: () {},
-                    child: const Padding(
-                      padding: EdgeInsets.all(5.0),
-                      child: Text('Forgot Password?'),
-                    ),
-                  ),
-                ),
+                const ForgotPasswordTextButtonWidget(),
                 const SizedBox(height: 30),
                 ref.watch(isAuthenticating)
                     ? AuthenticatingSpinnerWidget(themeState: themeState)
