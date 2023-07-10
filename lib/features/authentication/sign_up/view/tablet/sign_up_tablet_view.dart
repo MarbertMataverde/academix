@@ -149,7 +149,7 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                             CustomTextFormField(
                               controller: userFirstName,
                               width: mediaQuerySize.width * 0.95 / 3.05,
-                              themeState: themeState,
+                              ref: ref,
                               hintText: 'First Name',
                               keyboardType: TextInputType.text,
                               validator: (value) => firstNameValidator(value),
@@ -159,7 +159,7 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                             CustomTextFormField(
                               controller: userMiddleName,
                               width: mediaQuerySize.width * 0.95 / 3.05,
-                              themeState: themeState,
+                              ref: ref,
                               hintText: 'Middle Name',
                               keyboardType: TextInputType.text,
                               validator: (value) => middleNameValidator(value),
@@ -168,7 +168,7 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                             CustomTextFormField(
                               controller: userLastName,
                               width: mediaQuerySize.width * 0.95 / 3.05,
-                              themeState: themeState,
+                              ref: ref,
                               hintText: 'Last Name',
                               keyboardType: TextInputType.text,
                               validator: (value) => lastNameValidator(value),
@@ -182,7 +182,7 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                             CustomTextFormField(
                               controller: userContactNumber,
                               width: mediaQuerySize.width * 0.95 / 3.05,
-                              themeState: themeState,
+                              ref: ref,
                               inputFomater: numberFormater,
                               hintText: 'Contact Number',
                               keyboardType: TextInputType.number,
@@ -193,7 +193,7 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                             CustomTextFormField(
                               controller: userFullAddress,
                               width: mediaQuerySize.width * 0.95 / 2.05,
-                              themeState: themeState,
+                              ref: ref,
                               hintText: 'Full Address',
                               keyboardType: TextInputType.text,
                               validator: (value) => fullAddressValidator(value),
@@ -206,7 +206,6 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                               value: ref.watch(selectedGenderStateProvider),
                               valueStateProvider: selectedGenderStateProvider,
                               mediaQuerySize: mediaQuerySize,
-                              themeState: themeState,
                             ),
                           ],
                         ),
@@ -226,7 +225,7 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                                 CustomTextFormField(
                                   controller: userStudentNumber,
                                   width: mediaQuerySize.width * 0.95 / 2.05,
-                                  themeState: themeState,
+                                  ref: ref,
                                   inputFomater: numberFormater,
                                   hintText: 'Student Number',
                                   keyboardType: TextInputType.number,
@@ -246,7 +245,6 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                                   valueStateProvider:
                                       selectedCollegeStateProvider,
                                   mediaQuerySize: mediaQuerySize,
-                                  themeState: themeState,
                                 ),
                               ],
                             ),
@@ -263,7 +261,7 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                                 CustomTextFormField(
                                   controller: userEmailAddress,
                                   width: mediaQuerySize.width * 0.95 / 2.05,
-                                  themeState: themeState,
+                                  ref: ref,
                                   hintText: 'Email Address',
                                   keyboardType: TextInputType.emailAddress,
                                   validator: (value) => emailValidator(value),
@@ -274,7 +272,7 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                                 CustomTextFormField(
                                   controller: userPassword,
                                   width: mediaQuerySize.width * 0.95 / 2.05,
-                                  themeState: themeState,
+                                  ref: ref,
                                   hintText: 'Password',
                                   validator: (value) =>
                                       passwordValidator(value),
@@ -282,7 +280,6 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                                   obscureText: !ref
                                       .watch(isPasswordVisibleStateProvider),
                                   suffixIcon: CustomSuffixIconWidget(
-                                    themeState: themeState,
                                     ref: ref,
                                     stateProvider:
                                         isPasswordVisibleStateProvider,
@@ -294,7 +291,7 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                                 CustomTextFormField(
                                   controller: userConfirmedPassword,
                                   width: mediaQuerySize.width * 0.95 / 2.05,
-                                  themeState: themeState,
+                                  ref: ref,
                                   hintText: 'Confirm Password',
                                   keyboardType: TextInputType.visiblePassword,
                                   validator: (value) {
@@ -308,7 +305,6 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                                   obscureText: !ref
                                       .watch(isPasswordVisibleStateProvider),
                                   suffixIcon: CustomSuffixIconWidget(
-                                    themeState: themeState,
                                     ref: ref,
                                     stateProvider:
                                         isPasswordVisibleStateProvider,
@@ -334,7 +330,7 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                             style: elevatedButtonStyle(
                               buttonWidth: 200,
                               buttonHeight: 45,
-                              themeState: themeState,
+                              ref: ref,
                             ),
                             onPressed: () async {
                               Future.delayed(
@@ -383,7 +379,6 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                                           userPassword.value.text.trim(),
                                       ref: ref,
                                       context: context,
-                                      themeState: themeState,
                                     ).whenComplete(
                                       () {
                                         // this will close the animated text dialog
@@ -392,7 +387,6 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                                         customDialogBox(
                                           context: context,
                                           ref: ref,
-                                          themeState: themeState,
                                           title: SignUpMessage
                                               .accountCreatedDialogTitle,
                                           message: SignUpMessage
@@ -404,7 +398,7 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                                             padding:
                                                 const EdgeInsets.only(top: 20),
                                             child: DialogBoxButton(
-                                              themeState: themeState,
+                                              ref: ref,
                                               label: 'Okay',
                                               onPressed: () {
                                                 context.pop();
@@ -421,7 +415,6 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                                     customDialogBox(
                                       context: context,
                                       ref: ref,
-                                      themeState: themeState,
                                       title: dialogTitle,
                                       message: 'Please select your college.',
                                       width: DialogBoxSize.desktopWidth,
@@ -433,7 +426,6 @@ class _TabletSignUpViewState extends ConsumerState<TabletSignUpView> {
                                   customDialogBox(
                                     context: context,
                                     ref: ref,
-                                    themeState: themeState,
                                     title: dialogTitle,
                                     message: 'Please select your gender.',
                                     width: DialogBoxSize.desktopWidth,

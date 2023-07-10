@@ -129,7 +129,7 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                   const SizedBox(height: 10),
                   CustomTextFormField(
                     controller: userFirstName,
-                    themeState: themeState,
+                    ref: ref,
                     hintText: 'First Name',
                     keyboardType: TextInputType.text,
                     validator: (value) => firstNameValidator(value),
@@ -137,7 +137,7 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                   const SizedBox(height: 10),
                   CustomTextFormField(
                     controller: userMiddleName,
-                    themeState: themeState,
+                    ref: ref,
                     hintText: 'Middle Name',
                     keyboardType: TextInputType.text,
                     validator: (value) => middleNameValidator(value),
@@ -145,7 +145,7 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                   const SizedBox(height: 10),
                   CustomTextFormField(
                     controller: userLastName,
-                    themeState: themeState,
+                    ref: ref,
                     hintText: 'Last Name',
                     keyboardType: TextInputType.text,
                     validator: (value) => lastNameValidator(value),
@@ -153,7 +153,7 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                   const SizedBox(height: 10),
                   CustomTextFormField(
                     controller: userContactNumber,
-                    themeState: themeState,
+                    ref: ref,
                     inputFomater: numberFormater,
                     hintText: 'Contact Number',
                     keyboardType: TextInputType.number,
@@ -162,7 +162,7 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                   const SizedBox(height: 10),
                   CustomTextFormField(
                     controller: userFullAddress,
-                    themeState: themeState,
+                    ref: ref,
                     hintText: 'Full Address',
                     keyboardType: TextInputType.text,
                     validator: (value) => fullAddressValidator(value),
@@ -176,7 +176,6 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                     value: ref.watch(selectedGenderStateProvider),
                     valueStateProvider: selectedGenderStateProvider,
                     mediaQuerySize: mediaQuerySize,
-                    themeState: themeState,
                   ),
                   const SizedBox(
                     height: 20,
@@ -189,7 +188,7 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                   const SizedBox(height: 10),
                   CustomTextFormField(
                     controller: userStudentNumber,
-                    themeState: themeState,
+                    ref: ref,
                     inputFomater: numberFormater,
                     hintText: 'Student Number',
                     keyboardType: TextInputType.number,
@@ -206,7 +205,6 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                     value: ref.watch(selectedCollegeStateProvider),
                     valueStateProvider: selectedCollegeStateProvider,
                     mediaQuerySize: mediaQuerySize,
-                    themeState: themeState,
                   ),
                   const SizedBox(height: 20),
                   // Account Information
@@ -217,7 +215,7 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                   const SizedBox(height: 10),
                   CustomTextFormField(
                     controller: userEmailAddress,
-                    themeState: themeState,
+                    ref: ref,
                     hintText: 'Email Address',
                     keyboardType: TextInputType.emailAddress,
                     validator: (value) => emailValidator(value),
@@ -227,13 +225,12 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                   ),
                   CustomTextFormField(
                     controller: userPassword,
-                    themeState: themeState,
+                    ref: ref,
                     hintText: 'Password',
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: !ref.watch(isPasswordVisibleStateProvider),
                     validator: (value) => passwordValidator(value),
                     suffixIcon: CustomSuffixIconWidget(
-                      themeState: themeState,
                       ref: ref,
                       stateProvider: isPasswordVisibleStateProvider,
                     ),
@@ -243,7 +240,7 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                   ),
                   CustomTextFormField(
                     controller: userConfirmedPassword,
-                    themeState: themeState,
+                    ref: ref,
                     hintText: 'Confirm Password',
                     keyboardType: TextInputType.visiblePassword,
                     obscureText: !ref.watch(isPasswordVisibleStateProvider),
@@ -255,7 +252,6 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                       }
                     },
                     suffixIcon: CustomSuffixIconWidget(
-                      themeState: themeState,
                       ref: ref,
                       stateProvider: isPasswordVisibleStateProvider,
                     ),
@@ -276,7 +272,7 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                       style: elevatedButtonStyle(
                         buttonWidth: 200,
                         buttonHeight: 45,
-                        themeState: themeState,
+                        ref: ref,
                       ),
                       onPressed: () async {
                         Future.delayed(
@@ -320,7 +316,6 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                                 userPassword: userPassword.value.text.trim(),
                                 ref: ref,
                                 context: context,
-                                themeState: themeState,
                               ).whenComplete(
                                 () {
                                   // this will close the animated text dialog
@@ -329,7 +324,6 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                                   customDialogBox(
                                     context: context,
                                     ref: ref,
-                                    themeState: themeState,
                                     title:
                                         SignUpMessage.accountCreatedDialogTitle,
                                     message: SignUpMessage
@@ -340,7 +334,7 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                                     widget: Padding(
                                       padding: const EdgeInsets.only(top: 20),
                                       child: DialogBoxButton(
-                                        themeState: themeState,
+                                        ref: ref,
                                         label: 'Okay',
                                         onPressed: () {
                                           context.pop();
@@ -356,7 +350,6 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                               customDialogBox(
                                 context: context,
                                 ref: ref,
-                                themeState: themeState,
                                 title: dialogTitle,
                                 message: 'Please select your college.',
                                 width: DialogBoxSize.phoneWidth,
@@ -368,7 +361,6 @@ class _PhoneSignUpViewState extends ConsumerState<PhoneSignUpView> {
                             customDialogBox(
                               context: context,
                               ref: ref,
-                              themeState: themeState,
                               title: dialogTitle,
                               message: 'Please select your gender.',
                               width: DialogBoxSize.phoneWidth,

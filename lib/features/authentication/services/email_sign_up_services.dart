@@ -45,7 +45,6 @@ Future<void> emailSignUp({
   required String userPassword,
   required WidgetRef ref,
   required BuildContext context,
-  required String themeState,
 }) async {
   final String formattedName =
       '$userLastName, $userFirstName ${userMiddleName[0]}';
@@ -89,7 +88,6 @@ Future<void> emailSignUp({
       case 'email-already-in-use':
         customDialogBox(
             ref: ref,
-            themeState: themeState,
             context: context,
             title: 'Email Already In Use',
             message: SignUpErrorMessage.emailAlreadyInUse);
@@ -98,7 +96,6 @@ Future<void> emailSignUp({
       default:
         customDialogBox(
             ref: ref,
-            themeState: themeState,
             context: context,
             title: code, // temporary fix
             message: e.message.toString());
@@ -106,7 +103,6 @@ Future<void> emailSignUp({
   } catch (error) {
     customDialogBox(
       ref: ref,
-      themeState: themeState,
       context: context,
       title: 'Something Went Wrong',
       message: error.toString(),

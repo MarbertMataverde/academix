@@ -1,3 +1,4 @@
+import 'package:academix/configs/themes/provider/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -13,7 +14,6 @@ class CustomDropdownButtonWidget extends StatelessWidget {
     Key? key,
     required this.ref,
     required this.mediaQuerySize,
-    required this.themeState,
     this.width,
     this.height,
     required this.value,
@@ -27,9 +27,6 @@ class CustomDropdownButtonWidget extends StatelessWidget {
 
   /// The size of the media query.
   final Size mediaQuerySize;
-
-  /// The theme state.
-  final String themeState;
 
   /// The width of the dropdown button. Defaults to `null`.
   final double? width;
@@ -51,6 +48,7 @@ class CustomDropdownButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String themeState = ref.watch(themeStateProvider);
     return Container(
       width: width ?? mediaQuerySize.width * 0.8 / 6,
       height: height ?? 50,

@@ -19,7 +19,6 @@ Future<void> signIn({
   required String userPassword,
   required BuildContext context,
   required WidgetRef ref,
-  required String themeState,
 }) async {
   try {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -33,7 +32,6 @@ Future<void> signIn({
       case 'wrong-password':
         customDialogBox(
             ref: ref,
-            themeState: themeState,
             context: context,
             title: 'Wrong Password',
             message: SignInErrorMessage.wrongPasswordMessage);
@@ -41,7 +39,6 @@ Future<void> signIn({
       case 'user-not-found':
         customDialogBox(
             ref: ref,
-            themeState: themeState,
             context: context,
             title: 'User Not Found',
             message: SignInErrorMessage.userNotFoundMessage);
@@ -49,7 +46,6 @@ Future<void> signIn({
       case 'user-disabled':
         customDialogBox(
             ref: ref,
-            themeState: themeState,
             context: context,
             title: 'User Disabled',
             message: SignInErrorMessage.userDisabledMessage);
@@ -57,7 +53,6 @@ Future<void> signIn({
       case 'too-many-requests':
         customDialogBox(
             ref: ref,
-            themeState: themeState,
             context: context,
             title: 'Too Many Request',
             message: SignInErrorMessage.tooManyRequestMessage);
@@ -65,7 +60,6 @@ Future<void> signIn({
       case 'network-request-failed':
         customDialogBox(
             ref: ref,
-            themeState: themeState,
             context: context,
             title: 'No Internet Connection',
             message: SignInErrorMessage.networkRequestFailedMessage);
@@ -73,7 +67,6 @@ Future<void> signIn({
       default:
         customDialogBox(
             ref: ref,
-            themeState: themeState,
             context: context,
             title: code, // temporary fix
             message: e.message.toString());
@@ -81,7 +74,6 @@ Future<void> signIn({
   } catch (error) {
     customDialogBox(
       ref: ref,
-      themeState: themeState,
       context: context,
       title: 'Something Went Wrong',
       message: error.toString(),

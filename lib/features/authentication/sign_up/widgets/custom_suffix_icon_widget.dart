@@ -2,6 +2,7 @@ import 'package:academix/configs/themes/colors/dark_theme_colors.dart';
 import 'package:academix/configs/themes/colors/light_theme_colors.dart';
 import 'package:academix/configs/themes/colors/mirage_theme_colors.dart';
 import 'package:academix/configs/themes/provider/theme_options.dart';
+import 'package:academix/configs/themes/provider/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -14,9 +15,6 @@ class CustomSuffixIconWidget extends StatelessWidget {
   /// The state provider for controlling the visibility of the text.
   final StateProvider<bool> stateProvider;
 
-  /// The current theme of the app.
-  final String themeState;
-
   /// Creates a [CustomSuffixIconWidget].
   ///
   /// The [ref] parameter is a reference to the widget's [WidgetRef].
@@ -26,11 +24,11 @@ class CustomSuffixIconWidget extends StatelessWidget {
     Key? key,
     required this.ref,
     required this.stateProvider,
-    required this.themeState,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final String themeState = ref.watch(themeStateProvider);
     return MaterialButton(
       shape: const CircleBorder(),
       onPressed: () => ref

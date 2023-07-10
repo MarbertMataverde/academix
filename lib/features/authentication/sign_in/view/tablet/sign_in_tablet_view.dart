@@ -86,11 +86,10 @@ class _TabletSignInViewState extends ConsumerState<TabletSignInView> {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    style: elevatedButtonStyle(themeState: themeState),
+                    style: elevatedButtonStyle(ref: ref),
                     onPressed: () => customDialogBox(
                       context: context,
                       ref: ref,
-                      themeState: themeState,
                       title: 'Feature Coming Soon',
                       message:
                           'We regret to inform you that the Google Sign-In feature has not been implemented yet. We apologize for any inconvenience caused and assure you that we are working diligently to make it available as soon as possible. Thank you for your understanding.',
@@ -110,7 +109,7 @@ class _TabletSignInViewState extends ConsumerState<TabletSignInView> {
                     children: [
                       CustomTextFormField(
                         controller: userEmailAddress,
-                        themeState: themeState,
+                        ref: ref,
                         hintText: 'Academix@email.edu',
                         keyboardType: TextInputType.emailAddress,
                         validator: (value) => emailValidator(value),
@@ -119,12 +118,11 @@ class _TabletSignInViewState extends ConsumerState<TabletSignInView> {
                       CustomTextFormField(
                         controller: userPassword,
                         obscureText: !ref.watch(isPasswordVisible),
-                        themeState: themeState,
+                        ref: ref,
                         hintText: 'Password',
                         suffixIcon: CustomSuffixIconWidget(
                           ref: ref,
                           stateProvider: isPasswordVisible,
-                          themeState: themeState,
                         ),
                         keyboardType: TextInputType.visiblePassword,
                         validator: (value) => signInPasswordValidator(value),
@@ -139,7 +137,7 @@ class _TabletSignInViewState extends ConsumerState<TabletSignInView> {
                     : SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                          style: elevatedButtonStyle(themeState: themeState),
+                          style: elevatedButtonStyle(ref: ref),
                           onPressed: () async {
                             if (_formKey.currentState!.validate()) {
                               ref
@@ -151,7 +149,6 @@ class _TabletSignInViewState extends ConsumerState<TabletSignInView> {
                                 userPassword: userPassword.value.text,
                                 context: context,
                                 ref: ref,
-                                themeState: themeState,
                               );
 
                               ref

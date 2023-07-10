@@ -3,6 +3,7 @@ import 'package:academix/configs/themes/colors/dark_theme_colors.dart';
 import 'package:academix/configs/themes/colors/light_theme_colors.dart';
 import 'package:academix/configs/themes/colors/mirage_theme_colors.dart';
 import 'package:academix/configs/themes/provider/theme_options.dart';
+import 'package:academix/configs/themes/provider/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -29,7 +30,6 @@ import 'package:go_router/go_router.dart';
 Future<dynamic> customDialogBox({
   required BuildContext context,
   required WidgetRef ref,
-  required String themeState,
   required String title,
   required String message,
   double? width,
@@ -39,6 +39,7 @@ Future<dynamic> customDialogBox({
   Widget? widget,
   Function()? closeButtonOnPressed,
 }) async {
+  final themeState = ref.watch(themeStateProvider);
   return showDialog(
     barrierDismissible: isDissmisable,
     context: context,

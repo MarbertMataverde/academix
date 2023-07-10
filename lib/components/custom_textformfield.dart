@@ -1,3 +1,4 @@
+import 'package:academix/configs/themes/provider/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -5,11 +6,12 @@ import 'package:academix/configs/themes/colors/dark_theme_colors.dart';
 import 'package:academix/configs/themes/colors/light_theme_colors.dart';
 import 'package:academix/configs/themes/colors/mirage_theme_colors.dart';
 import 'package:academix/configs/themes/provider/theme_options.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// A customizable text input field that adapts its appearance based on the selected theme of the app.
 class CustomTextFormField extends StatelessWidget {
-  /// The current theme of the app.
-  final String themeState;
+  /// The referrence of the app.
+  final WidgetRef ref;
 
   /// Determines whether the text field is used for entering a password. If `true`, the entered text will be obscured.
   final bool? obscureText;
@@ -49,7 +51,6 @@ class CustomTextFormField extends StatelessWidget {
   /// The `keyboardType` parameter determines the keyboard type to use for the text field.
   const CustomTextFormField({
     Key? key,
-    required this.themeState,
     this.obscureText,
     required this.hintText,
     required this.keyboardType,
@@ -60,10 +61,12 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.validator,
     this.controller,
+    required this.ref,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final String themeState = ref.watch(themeStateProvider);
     return SizedBox(
       width: width ?? double.infinity,
       height: height,

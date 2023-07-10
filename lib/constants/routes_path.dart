@@ -7,4 +7,7 @@ class RoutesPath {
 
   /// The route path for the sign-up screen.
   static const String signUp = '/sign-up';
+
+  /// The route path for the forgot password screen.
+  static const String forgotPassword = '/forgot-password';
 }

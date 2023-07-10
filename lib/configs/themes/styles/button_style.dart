@@ -2,7 +2,9 @@ import 'package:academix/configs/themes/colors/dark_theme_colors.dart';
 import 'package:academix/configs/themes/colors/light_theme_colors.dart';
 import 'package:academix/configs/themes/colors/mirage_theme_colors.dart';
 import 'package:academix/configs/themes/provider/theme_options.dart';
+import 'package:academix/configs/themes/provider/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// Returns a ButtonStyle based on the provided theme state.
 ///
@@ -10,10 +12,11 @@ import 'package:flutter/material.dart';
 /// The returned ButtonStyle will have a background color, elevation, side, shape, splash factory, animation duration,
 /// and foreground color based on the provided theme state.
 ButtonStyle elevatedButtonStyle({
-  required String themeState,
+  required WidgetRef ref,
   double? buttonWidth,
   double? buttonHeight,
 }) {
+  final String themeState = ref.watch(themeStateProvider);
   return ElevatedButton.styleFrom(
     elevation: 0,
     fixedSize: Size(buttonWidth ?? double.infinity, buttonHeight ?? 50),
