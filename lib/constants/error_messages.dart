@@ -25,3 +25,14 @@ class SignUpErrorMessage {
   static const String emailAlreadyInUse =
       'That email is already registered. Please try signing in or use a different email.';
 }
+
+class ResetPasswordMessage {
+  static const String userNotFoundMessage =
+      'The provided email address does not correspond to any existing user account.';
+
+  static const String tooManyRequestMessage =
+      'Sorry, you have exceeded the maximum number of requests allowed. Please try again later.';
+
+  static const String networkRequestFailedMessage =
+      'We apologize, but it looks like you\'re currently not connected to the internet. Please check your connection and try again.';
+}
