@@ -26,6 +26,9 @@ dependencies:
   fluentui_system_icons: ^1.1.205
   firebase_storage: ^11.2.4
   file_picker: ^5.3.2
+  flutter_carousel_widget: ^2.0.4
+  cached_network_image: ^3.2.3
+  timeago: ^3.5.0
 
 dev_dependencies:
   flutter_test:
@@ -39,58 +42,19 @@ flutter:
   assets:
     # fonts
     - assets/fonts/sacramento/
-    - assets/fonts/ysabeau_office/
+    - assets/fonts/gilroy/
     # logo
     - assets/logo/light/
     - assets/logo/dark/
     - assets/logo/mirage/
 
   fonts:
-    # Sacramento Font
-    - family: Sacramento
-      fonts:
-        - asset: assets/fonts/sacramento/Sacramento-Regular.ttf
-    # Ysabeau Office Font
-    - family: Ysabeau
-      fonts:
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-Light.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-LightItalic.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-Regular.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-Black.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-BlackItalic.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-Bold.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-BoldItalic.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-ExtraBold.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-ExtraBoldItalic.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-ExtraLight.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-ExtraLightItalic.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-Italic.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-Medium.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-MediumItalic.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-SemiBold.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-SemiBoldItalic.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-Thin.ttf
-        - asset: assets/fonts/ysabeau_office/YsabeauOffice-ThinItalic.ttf
     # Gilroy Font
     - family: Gilroy
       fonts:
         - asset: assets/fonts/gilroy/Gilroy-Regular.ttf
-        - asset: assets/fonts/gilroy/Gilroy-Light.ttf
-        - asset: assets/fonts/gilroy/Gilroy-LightItalic.ttf
-        - asset: assets/fonts/gilroy/Gilroy-RegularItalic.ttf
-        - asset: assets/fonts/gilroy/Gilroy-Black.ttf
-        - asset: assets/fonts/gilroy/Gilroy-BlackItalic.ttf
-        - asset: assets/fonts/gilroy/Gilroy-Bold.ttf
-        - asset: assets/fonts/gilroy/Gilroy-BoldItalic.ttf
-        - asset: assets/fonts/gilroy/Gilroy-ExtraBold.ttf
-        - asset: assets/fonts/gilroy/Gilroy-ExtraBoldItalic.ttf
-        - asset: assets/fonts/gilroy/Gilroy-Heavy.ttf
-        - asset: assets/fonts/gilroy/Gilroy-HeavyItalic.ttf
-        - asset: assets/fonts/gilroy/Gilroy-Medium.ttf
-        - asset: assets/fonts/gilroy/Gilroy-MediumItalic.ttf
-        - asset: assets/fonts/gilroy/Gilroy-SemiBold.ttf
-        - asset: assets/fonts/gilroy/Gilroy-SemiBoldItalic.ttf
-        - asset: assets/fonts/gilroy/Gilroy-Thin.ttf
-        - asset: assets/fonts/gilroy/Gilroy-ThinItalic.ttf
-        - asset: assets/fonts/gilroy/Gilroy-UltraLight.ttf
-        - asset: assets/fonts/gilroy/Gilroy-UltraLightItalic.ttf
+
+    # Sacramento Font
+    - family: Sacramento
+      fonts:
+        - asset: assets/fonts/sacramento/Sacramento-Regular.ttf
