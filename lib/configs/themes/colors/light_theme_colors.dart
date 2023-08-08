@@ -23,6 +23,9 @@ class LightThemeColors {
   // The shadow color used in the light theme for visual depth.
   static const Color shadowColor = Color(0xFFD3D4D5);
 
-  // // Light button background color
+  //  Light button background color
   static const Color buttonBackgroundColor = Color(0xFFFCFCFC);
+
+  // Light navigation bar button background color
+  static const Color navigationButtonColor = Color(0xFFD3D4D5);
 }

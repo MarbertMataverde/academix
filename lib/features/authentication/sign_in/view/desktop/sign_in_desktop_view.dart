@@ -117,6 +117,8 @@ class _DesktopViewState extends ConsumerState<DesktopSignInView> {
                                 ref: ref,
                                 hintText: 'Academix@email.edu',
                                 keyboardType: TextInputType.emailAddress,
+                                onFieldSubmited: (_) async =>
+                                    await signInFunction(context),
                                 validator: (value) => emailValidator(value),
                               ),
                               const SizedBox(height: 10),
@@ -126,6 +128,8 @@ class _DesktopViewState extends ConsumerState<DesktopSignInView> {
                                 ref: ref,
                                 hintText: 'Password',
                                 keyboardType: TextInputType.visiblePassword,
+                                onFieldSubmited: (_) async =>
+                                    await signInFunction(context),
                                 suffixIcon: CustomSuffixIconWidget(
                                   ref: ref,
                                   stateProvider: isPasswordVisible,
@@ -145,25 +149,8 @@ class _DesktopViewState extends ConsumerState<DesktopSignInView> {
                                 width: double.infinity,
                                 child: ElevatedButton(
                                   style: elevatedButtonStyle(ref: ref),
-                                  onPressed: () async {
-                                    if (_formKey.currentState!.validate()) {
-                                      ref
-                                          .read(isAuthenticating.notifier)
-                                          .update((state) => true);
-
-                                      await signIn(
-                                        userEmail:
-                                            userEmailAddress.value.text.trim(),
-                                        userPassword: userPassword.value.text,
-                                        context: context,
-                                        ref: ref,
-                                      );
-
-                                      ref
-                                          .read(isAuthenticating.notifier)
-                                          .update((state) => false);
-                                    }
-                                  },
+                                  onPressed: () async =>
+                                      await signInFunction(context),
                                   child: const Text('Sign In'),
                                 ),
                               ),
@@ -228,5 +215,20 @@ class _DesktopViewState extends ConsumerState<DesktopSignInView> {
         ],
       ),
     );
+  }
+
+  Future<void> signInFunction(BuildContext context) async {
+    if (_formKey.currentState!.validate()) {
+      ref.read(isAuthenticating.notifier).update((state) => true);
+
+      await signIn(
+        userEmail: userEmailAddress.value.text.trim(),
+        userPassword: userPassword.value.text,
+        context: context,
+        ref: ref,
+      );
+
+      ref.read(isAuthenticating.notifier).update((state) => false);
+    }
   }
 }

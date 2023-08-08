@@ -1,12 +1,13 @@
-import 'package:academix/configs/themes/provider/theme_provider.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:academix/configs/themes/colors/dark_theme_colors.dart';
 import 'package:academix/configs/themes/colors/light_theme_colors.dart';
 import 'package:academix/configs/themes/colors/mirage_theme_colors.dart';
 import 'package:academix/configs/themes/provider/theme_options.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:academix/configs/themes/provider/theme_provider.dart';
 
 /// A customizable text input field that adapts its appearance based on the selected theme of the app.
 class CustomTextFormField extends StatelessWidget {
@@ -43,6 +44,8 @@ class CustomTextFormField extends StatelessWidget {
   /// The text editing cotroller
   final TextEditingController? controller;
 
+  final Function(String)? onFieldSubmited;
+
   /// Creates a `CustomTextFormField`.
   ///
   /// The `themeState` parameter represents the current theme of the app as a string.
@@ -51,6 +54,7 @@ class CustomTextFormField extends StatelessWidget {
   /// The `keyboardType` parameter determines the keyboard type to use for the text field.
   const CustomTextFormField({
     Key? key,
+    required this.ref,
     this.obscureText,
     required this.hintText,
     required this.keyboardType,
@@ -61,7 +65,7 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.validator,
     this.controller,
-    required this.ref,
+    this.onFieldSubmited,
   }) : super(key: key);
 
   @override
@@ -71,6 +75,7 @@ class CustomTextFormField extends StatelessWidget {
       width: width ?? double.infinity,
       height: height,
       child: TextFormField(
+        onFieldSubmitted: onFieldSubmited,
         controller: controller,
         validator: validator,
         autofocus: false,

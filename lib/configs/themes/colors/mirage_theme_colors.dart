@@ -25,4 +25,7 @@ class MirageThemeColors {
 
   // Mirage button background color
   static const Color buttonBackgroundColor = Color(0xFF171B24);
+
+  // Mirage navigation bar button background color
+  static const Color navigationButtonColor = Color(0xFF171B24);
 }

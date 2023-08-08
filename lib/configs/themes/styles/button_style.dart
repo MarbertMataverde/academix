@@ -26,12 +26,20 @@ ButtonStyle elevatedButtonStyle({
             ? MirageThemeColors.buttonBackgroundColor
             : LightThemeColors.buttonBackgroundColor,
     side: themeState == ThemeOptions.lightTheme
-        ? const BorderSide(color: LightThemeColors.shadowColor, width: 0.5)
+        ? const BorderSide(
+            color: LightThemeColors.shadowColor,
+            width: 0.5,
+          )
         : null,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(5)),
     ),
     splashFactory: NoSplash.splashFactory,
+    shadowColor: themeState == ThemeOptions.darkTheme
+        ? DarkThemeColors.shadowColor
+        : themeState == ThemeOptions.mirageTheme
+            ? MirageThemeColors.shadowColor
+            : LightThemeColors.shadowColor,
     animationDuration: const Duration(milliseconds: 100),
     foregroundColor: themeState == ThemeOptions.darkTheme
         ? DarkThemeColors.foregroundColor

@@ -24,5 +24,8 @@ class DarkThemeColors {
   static const Color shadowColor = Color(0xFF05070A);
 
   // Dark button background color
-  static const Color buttonBackgroundColor = Color(0xFF0F131A);
+  static const Color buttonBackgroundColor = Color(0xFF1B1F25);
+
+  // Dark navigation bar button background color
+  static const Color navigationButtonColor = Color(0xFF1B1F25);
 }

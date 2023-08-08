@@ -10,7 +10,10 @@ import 'package:academix/features/authentication/sign_in/view/tablet/sign_in_tab
 import 'package:academix/features/authentication/sign_up/view/desktop/desktop_sign_up_view.dart';
 import 'package:academix/features/authentication/sign_up/view/phone/phone_sign_up_view.dart';
 import 'package:academix/features/authentication/sign_up/view/tablet/tablet_sign_up_view.dart';
-import 'package:academix/features/home/desktop_home_view.dart';
+import 'package:academix/features/view_wrapper/desktop/desktop_wrapper.dart';
+import 'package:academix/features/view_wrapper/phone/phone_wrapper.dart';
+import 'package:academix/features/view_wrapper/tablet/tablet_wrapper.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -33,8 +36,11 @@ GoRouter academixRouter = GoRouter(
           } else if (snapshot.hasError) {
             return _buildErrorMessageWidget(); // restart the app message
           } else if (snapshot.hasData) {
-            // TODO Create and Add HomeView routes for all devices
-            return const DesktopHomeView(); // home screen
+            return const ResponsiveLayout(
+              phone: PhoneWrapper(),
+              tablet: TabletWrapper(),
+              desktop: DesktopWrapper(),
+            ); // home screen
           } else {
             return const ResponsiveLayout(
               phone: PhoneSignInView(),
